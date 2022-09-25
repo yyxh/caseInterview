@@ -5,8 +5,196 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+        div{
+            font-size: 12px;
+        }
+        .p2{
+            font-size: 2em;  /*24px*/
+        }
+        .p1{
+            font-size: 1.2rem; /*12px*/
+        }
+        .block{
+            /* width: 200vw;
+            height: 100vh; */
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /* background: url(./banner.jpg) no-repeat top center; */
+            margin: auto;
+        }
+        body,html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+        }
+        .block1{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: flex;  /*快速居中对齐*/
+        }
+        .block2{
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+            margin: auto;  /*快速居中对齐*/
+        }
+        .photoContainer{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;  
+            position: relative;  
+        }
+        .photo{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .red-dot{
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: red;
+            position: absolute;
+            top: 0;
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <p class="p2">我爱学习</p>
+        <p class="p1">学习js</p>
+    </div>
+    <div class="block">
+
+    </div>
+    <div class="block1">
+        <div class="block2">  
+        </div>
+    </div>
+    <div class="photoContainer">
+        <img class="photo" src="./banner.jpg" alt="">
+        <span class="red-dot"></span>
+    </div>
+    <script>    
+        // var、let、const
+        // 1、声明提升
+        console.log(a); //undefined
+        var a = 1
+
+        // console.log(b); //报错
+        // let b = 1
+
+        // 2、没有局部作用域
+        for(var i = 0; i < 5; i++){
+            console.log('内部i',i)
+        }
+        console.log('外部i', i) // 5
+
+        // for(let i = 0; i < 5; i++){
+        //     console.log('内部i',i)
+        // }
+        // console.log('外部i', i) // 报错
+
+        // 3、声明覆盖
+        var a = 1;
+        var a = 2;
+        console.log('a',a) // 2
+
+        // let b = 1;
+        // let b = 2;
+        // console.log('b', b) //报错
+
+        // const 必须初始化，基本类型不能更改，可以更改对象、数组
+        // const a = 1;
+        // a = 2;
+        // console.log(a)  //报错
+
+        const person = {
+            name: 'Tom',
+            age: '16'
+        }
+        // person = {
+        //     name: 'Jerry',
+        //     age: '20'
+        // }   // 报错
+
+        person.name = 'Jerry'
+        // console.log('person',person)  
+
+        // em rem vh vw
+        // em 相对于父级节点
+        // rem 相对于根节点
+
+        // vw-视口的宽度 vh-视口的高度
+
+
+        // 快速居中、flex布局
+
+        // 清除浮动
+        // 1、div标签添加clear:both属性
+        // 2、父级div添加伪类:after 和 zoom
+        // 3、父级div设置overflow:hidden
+
+
+
+
+        // new Set()  new Map()
+        // Set 和 Map主要的应用场景在于数组重组和数据存储
+        // Set是一种叫做集合的数据结构，Map是一种叫做字典的数据结构
+        // 集合与字典的区别
+        // 共同点：集合、字典可以储存不重复的值
+        // 不同点：集合以[value,value]的形式储存，字典以[key,value]的形式储存
+
+
+
+        // 判断数组的类型
+        // 1、基本数据类型 typeof
+        // 2、判断数据的构造函数 instanceof
+        // 3、最准确的方法 Object.prototype.toString.call()
+
+
+        // 绝对定位、相对定位
+
+
+        // slot 解释 vue实现了一套内容分发的api，<slot>元素作为承载分发内容的出口
+            // 插槽的实质是对子组件的扩展，同<slot>插槽向子组件内部指定位置传递内容
+
+
+
+        // vue路由跳转
+        // 1、简单跳转 /path/
+        // 2、参数跳转用对象 {path:'/detail',query:{}}
+        // 3、params只支持具名路由(带name){name:'',query:{}}        
+
     
+        // 使用promise.all 进行5个请求，若其中一个失败了，怎么让其他4个成功返回
+        // let p1 = Promise.resolve(1)
+        // let p2 = Promise.resolve(2)
+        // let p3 = Promise.resolve(3)
+        // let p4 = Promise.resolve(4)
+        // let p5 = Promise.reject("error")
+        // let arr = [p1,p2,p3,p4,p5];
+
+        // let all = Promise.all(arr.map((promise)=>promise.catch((e)=>{console.log("错误信息"+e)})))
+        // all.then(res=>{console.log(res)}).catch(err=>console.log(err));
+
+        
+
+        //组件通信，父子组件，非父子组件之间的通信
+
+
+
+        // ref
+
+    </script>
 </body>
 </html>
